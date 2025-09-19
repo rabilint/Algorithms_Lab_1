@@ -6,7 +6,7 @@
 #define LAB2_QUICKSORT_QUICKSORT_H
 #include <vector>
 
-void QuickSort(std::vector<int>& Array, int main, int right);
+void QuickSort(std::vector<int>& Array, int left, int right);
 
 
 #endif //LAB2_QUICKSORT_QUICKSORT_H

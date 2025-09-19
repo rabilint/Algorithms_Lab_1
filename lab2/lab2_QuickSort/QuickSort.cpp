@@ -7,7 +7,7 @@
 int Partition(std::vector<int>& Array, int left, int right)
 {
     int x = Array[right];
-        int i = left - 1;
+    int i = left - 1;
     for (int j = left;  j <= right - 1;  j++ )
     {
         if ( Array[j] <= x )
