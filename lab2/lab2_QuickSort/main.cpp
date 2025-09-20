@@ -1,17 +1,37 @@
 #include <iostream>
 #include <algorithm>
 #include <iterator>
-
+#include <sstream>
 #include "QuickSort.h"
 
 int main()
 {
-    std::vector<int> Array = {2,4,1,9,5,6,7,5,3,7};
-    std::cout << "Array before sorting" << std::endl;
-    std::copy (Array.begin(), Array.end(), std::ostream_iterator<int>(std::cout, " "));
-    std::cout << std::endl;
-    QuickSort(Array, 0, Array.size() - 1);
-    std::cout << "Array after sorting" << std::endl;
-    std::copy (Array.begin(), Array.end(), std::ostream_iterator<int>(std::cout, " "));
+    std::string input;
+    std::cout << "Insert array to sort like this: \" 2,1,3,4,8,7,6,5,9,10 \" :" << std::endl;
+    std::vector <int> arrayToSort;
+    std::getline(std::cin, input);
+    std::stringstream ss(input);
+    arrayToSort.reserve(input.size() / 2);
+    try
+    {
+        while (ss.good())
+        {
+            std::string item;
+            std::getline(ss, item, ',');
+            arrayToSort.push_back(std::stoi(item));
+        }
+    }catch (std::invalid_argument& e)
+    {
+        std::cout << "Error: " << e.what() << std::endl;
+        std::cout << "Relook your input and try to follow the instructions!" << std::endl;
+    }
+
+
+    std::cout << "Array before sorting:" << std::endl;
+    std::copy(arrayToSort.begin(), arrayToSort.end(), std::ostream_iterator<int>(std::cout, ", "));
+    QuickSort(arrayToSort, 0, arrayToSort.size() - 1);
+    std::cout << "\nArray after sort: " << std::endl;
+    std::copy(arrayToSort.begin(), arrayToSort.end(), std::ostream_iterator<int>(std::cout, ", "));
+
     return 0;
 }
