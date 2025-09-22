@@ -29,9 +29,15 @@ int main()
 
     std::cout << "Array before sorting:" << std::endl;
     std::copy(arrayToSort.begin(), arrayToSort.end(), std::ostream_iterator<int>(std::cout, ", "));
-    QuickSort(arrayToSort, 0, arrayToSort.size() - 1);
+    std::vector<int> copyArray = arrayToSort;
+
+    QuickSort(arrayToSort, 0, arrayToSort.size() - 1, false);
     std::cout << "\nArray after sort: " << std::endl;
     std::copy(arrayToSort.begin(), arrayToSort.end(), std::ostream_iterator<int>(std::cout, ", "));
+
+    QuickSort(copyArray, 0, copyArray.size() - 1, true);
+    std::cout << "\nArray after sorting reverse: " << std::endl;
+    std::copy(copyArray.begin(), copyArray.end(), std::ostream_iterator<int>(std::cout, ", "));
 
     return 0;
 }

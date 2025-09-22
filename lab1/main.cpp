@@ -19,8 +19,9 @@ int main()
         while (ss.good())
         {
             std::string item;
-            std::getline(ss, item, ',');
-            arrayToSort.push_back(std::stoi(item));
+                std::getline(ss, item, ',');
+                arrayToSort.push_back(std::stoi(item));
+
         }
     }catch (std::invalid_argument& e)
     {
