@@ -29,6 +29,15 @@ int main()
     int n = Array.size();
     std::cout << "Original Array : ";
     std::copy(Array.begin(), Array.end(), std::ostream_iterator<int>(std::cout, " "));
+
+    std::cout << std::endl;
+    std::cout << "Sorted Array by randomized QuickSort: ";
+    RandomizedQuickSort(Array, 0, n - 1, false);
+    std::copy(Array.begin(), Array.end(), std::ostream_iterator<int>(std::cout, " "));
+    std::cout <<"\nSorted Array reverse: ";
+    RandomizedQuickSort(Array, 0, n - 1, true);
+    std::copy(Array.begin(), Array.end(), std::ostream_iterator<int>(std::cout, " "));
+
     if (n > 0)
     {
         int min_val = RandomizedSelect(Array, 0, n - 1, 1);
