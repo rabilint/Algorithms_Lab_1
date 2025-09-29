@@ -39,5 +39,16 @@ int main()
     std::cout << "\nArray after sorting reverse: " << std::endl;
     std::copy(copyArray.begin(), copyArray.end(), std::ostream_iterator<int>(std::cout, ", "));
 
+    std::cout << std::endl;
+    int n = arrayToSort.size();
+    if (n % 2 == 0)
+    {
+        std::cout << "First median of array: " << n / 2 << std::endl;
+        std::cout << "Second median of array: " << ( n / 2 ) +1 << std::endl;
+    }else
+    {
+        std::cout << "Median of array: " << n / 2 << std::endl;
+    }
+
     return 0;
 }

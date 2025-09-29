@@ -40,14 +40,23 @@ int main()
 
     if (n > 0)
     {
+        int median = 0;
         int min_val = RandomizedSelect(Array, 0, n - 1, 1);
         std::cout << "\nMinimal value: " << min_val << std::endl;
 
         int max_val = RandomizedSelect(Array, 0, n - 1, n);
         std::cout << "Maximal value: " << max_val << std::endl;
+        if (Array.size() % 2 == 0)
+        {
+            std::cout << "Median 1: " << RandomizedSelect(Array, 0, n - 1, (n/2)) << std::endl;
+            std::cout << "Median 1: " << RandomizedSelect(Array, 0, n - 1, ((n)/2) + 1) << std::endl;
 
-        int median = RandomizedSelect(Array, 0, n - 1, (n + 1) /2);
-        std::cout << "Median value: " << median << std::endl;
+        }else
+        {
+            median = RandomizedSelect(Array, 0, n - 1, (n /2) +1 );
+            std::cout << "Median value: " << median << std::endl;
+        }
+
 
         if (n >= 3) {
             int i = 3;
