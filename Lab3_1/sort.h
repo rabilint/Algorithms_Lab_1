@@ -6,7 +6,7 @@
 #define LAB3_1_SORT_H
 #include <vector>
 std::vector<int> countSort(std::vector<int> input, bool reverse);
-void radixSort(std::vector<int>& array);
+void radixSort(std::vector<int>& array, bool reverse);
 
 
 #endif //LAB3_1_SORT_H

@@ -42,8 +42,13 @@ int main()
     std::cout << "\n\nsorting by radix";
 
     copyArray = arrayToSort;
-    radixSort(copyArray);
+    radixSort(copyArray, false);
     std::cout << "\nArray after sorting: [ " ;
+    std::copy(copyArray.begin(), copyArray.end(), std::ostream_iterator<int>(std::cout, " ],[ "));
+
+    std::cout << "\nArray after sorting reverse: [ " ;
+    copyArray = arrayToSort;
+    radixSort(copyArray, true);
     std::copy(copyArray.begin(), copyArray.end(), std::ostream_iterator<int>(std::cout, " ],[ "));
 
 
