@@ -4,6 +4,8 @@
 
 #include "sort.h"
 #include <algorithm>
+#include <iostream>
+#include <iterator>
 
 void countSortByDigit(std::vector<int>& input, int exp, bool reverse )
 {
@@ -14,7 +16,7 @@ void countSortByDigit(std::vector<int>& input, int exp, bool reverse )
     {
         count[(input[i] / exp) % 10]++;
     }
-
+    
     if (reverse)
     {
         for (int i = 8; i >= 0; i--)
@@ -58,11 +60,15 @@ std::vector<int> countSort(std::vector<int> input, bool reverse)
 {
     const int size = input.size();
     int maxval = *std::ranges::max_element(input);
-    std::vector countArray(maxval + 1, 0);
+    std::vector countArray(maxval  + 1, 0);
     for (int i = 0; i < size; i++)
     {
         countArray[input[i]]++;
     }
+
+    std::cout << std::endl;
+    std::cout << "\nCount Array: " ;
+    std::ranges::copy(countArray.begin(), countArray.end(), std::ostream_iterator<int>(std::cout, " "));
     if (!reverse)
     {
         for (int i = 1; i <= maxval; i++)
@@ -78,6 +84,10 @@ std::vector<int> countSort(std::vector<int> input, bool reverse)
 
         }
     }
+
+    std::cout << "\nCount Array: ";
+    std::ranges::copy(countArray.begin(), countArray.end(), std::ostream_iterator<int>(std::cout, " "));
+    std::cout << std::endl;
 
     std::vector<int> output(size);
     for (int i = size - 1; i >= 0; i--)

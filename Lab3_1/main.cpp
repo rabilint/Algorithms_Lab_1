@@ -8,7 +8,7 @@
 int main()
 {
     std::string input;
-    std::cout << "Insert array to sort like this: \" 9,2,1,3,4,8,7,6,5,9,10 \" :" << std::endl;
+    std::cout << "Insert array to sort like this: \" 4,0,1,2,4,2,3,1,1,4,0,2,4,2,1 \" :" << std::endl;
     std::vector <int> arrayToSort;
     std::getline(std::cin, input);
     std::stringstream ss(input);
@@ -39,18 +39,18 @@ int main()
     std::cout << "\nArray after sorting reverse: [ " ;
     std::copy(copyArray.begin(), copyArray.end(), std::ostream_iterator<int>(std::cout, " ],[ "));
 
-    std::cout << "\n\nsorting by radix";
+    // std::cout << "\n\nsorting by radix";
 
-    copyArray = arrayToSort;
-    radixSort(copyArray, false);
-    std::cout << "\nArray after sorting: [ " ;
-    std::copy(copyArray.begin(), copyArray.end(), std::ostream_iterator<int>(std::cout, " ],[ "));
-
-    std::cout << "\nArray after sorting reverse: [ " ;
-    copyArray = arrayToSort;
-    radixSort(copyArray, true);
-    std::copy(copyArray.begin(), copyArray.end(), std::ostream_iterator<int>(std::cout, " ],[ "));
-
+    // copyArray = arrayToSort;
+    // radixSort(copyArray, false);
+    // std::cout << "\nArray after sorting: [ " ;
+    // std::copy(copyArray.begin(), copyArray.end(), std::ostream_iterator<int>(std::cout, " ],[ "));
+    //
+    // std::cout << "\nArray after sorting reverse: [ " ;
+    // copyArray = arrayToSort;
+    // radixSort(copyArray, true);
+    // std::copy(copyArray.begin(), copyArray.end(), std::ostream_iterator<int>(std::cout, " ],[ "));
+    //
 
     return 0;
 }
